@@ -43,34 +43,85 @@
       <div class="site-mobile-menu-body"></div>
     </div>
 
-    <nav class="site-nav">
-      <div class="container">
-        <div class="menu-bg-wrap">
-          <div class="site-navigation">
-            <a href="index.html" class="logo m-0 float-start">PropAdvisor</a>
+   <nav class="site-nav">
+  <div class="menu-bg-wrap" style="background-color:#ffffff; border:none; width:100%; position:fixed; top:0; left:0; z-index:9999; padding:20px 0;">
+    <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 40px;">
+      
+      <!-- Logo -->
+      <a href="index.html" class="logo" style="color:#DAA520 !important; text-decoration:none; font-family:'Montserrat', sans-serif; font-weight:700; font-size:28px; letter-spacing:1px; text-shadow:1px 1px 2px rgba(0,0,0,0.3);">
+        PropAdvisor
+      </a>
 
-            <ul
-              class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end"
-            >
-              <li class="active"><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="tel://0468408936"><span class="icon-phone"></span> 0468 408 936</a></li>
-            </ul>
+      <!-- Navigation Menu -->
+      <ul class="js-clone-nav d-none d-lg-flex text-start site-menu" style="list-style:none; margin:0; padding:0; gap:30px; font-size:1.1rem; font-weight:600; letter-spacing:0.5px; font-family:'Montserrat', sans-serif;">
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="tel://0468408936"><span class="icon-phone"></span> 0468 408 936</a></li>
+      </ul>
 
-            <a
-              href="#"
-              class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none"
-              data-toggle="collapse"
-              data-target="#main-navbar"
-            >
-              <span></span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
+      <!-- Mobile Burger Menu -->
+      <a href="#" class="burger light me-auto site-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+        <span></span>
+      </a>
+
+    </div>
+  </div>
+</nav>
+
+<style>
+  /* Navbar container */
+  .menu-bg-wrap {
+    background-color: #ffffff;
+    border: none;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    padding: 20px 0;
+  }
+
+.site-menu a {
+  color: #000000; /* Default text */
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.site-menu a:hover {
+  color: #007bff; /* Royal Blue on hover */
+}
+
+/* Animated underline on hover */
+.site-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+.site-menu a:hover::after {
+  width: 100%;
+}
+
+/* Active/clicked link remains Royal Blue */
+.site-menu .active a {
+  color: #007bff;
+}
+
+.site-menu .active a::after {
+  width: 100%;
+}
+
+</style>
+
 
     <div
       class="hero page-inner overlay"
@@ -86,7 +137,7 @@
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <ol class="breadcrumb text-center justify-content-center">
+              <ol class="breadcrumb text-center justify-content-center" style="font-size: 1.5rem; font-weight: 600;">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                 <li
                   class="breadcrumb-item active text-white-50"
@@ -105,21 +156,21 @@
       <div class="container">
         <div class="row text-left mb-5">
           <div class="col-12">
-            <h2 class="font-weight-bold heading text-primary mb-4">About Us</h2>
-            <h4 class="font-weight-bold heading text-primary mb-4">PropAdvisor: Focused on You, the Buyer</h4>
+            <h2 class="font-weight-bold heading text-primary mb-4" style="font-size: clamp(28px, 3vw, 36px); font-weight: 700;">About Us</h2>
+            <h3 class="font-weight-bold heading text-primary mb-4" style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 600;">PropAdvisor is Focused on You, the Buyer</h3>
           </div>
           <div class="col-lg-6">
-            <p class="text-black-50">
+             <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
               At PropAdvisor, our mission is simple—put buyers first. We are committed to making your property journey seamless, informed, and rewarding.
             </p>
-            <p class="text-black-50">
+             <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
               As property investors ourselves and experienced advisors, we draw on our varied backgrounds in IT, Finance, and property development to guide you with a complete, well-informed approach.            </p>
-            <p class="text-black-50">
+             <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
               Our deep experience in buying, researching, and adding value to real estate allows us to combine hard data with practical strategy—ensuring every decision is profitable.          </div>
           <div class="col-lg-6">
-            <p class="text-black-50">
+             <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
               Through smart data research, we identify hidden opportunities early—giving you clarity and a competitive edge in the market.            </p>
-            <p class="text-black-50">
+             <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
               With PropAdvisor by your side, every step of your property journey is backed by knowledge, experience, and integrity—ensuring you invest with confidence.
             </p>
           </div>
@@ -141,8 +192,8 @@
                 <span class="icon-home2"></span>
               </span>
               <div class="feature-text">
-                <h3 class="heading">Data Powered</h3>
-                <p class="text-black-50">
+                <h3 class="heading" style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 600;"> Data Powered </h3>
+                <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
                   We leverage premium, real-time market intelligence to identify high-growth suburbs and properties, ensuring your investment is guided by facts, not guesswork.
                 </p>
               </div>
@@ -153,8 +204,8 @@
                 <span class="icon-person"></span>
               </span>
               <div class="feature-text">
-                <h3 class="heading">Smart Property Insights</h3>
-                <p class="text-black-50">
+                <h3 class="heading" style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 600;">Smart Property Insights</h3>
+                 <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
                   We combine expert knowledge with industry-leading data tools to spot trends early, helping you secure properties with the best potential for growth.
                 </p>
               </div>
@@ -165,8 +216,8 @@
                 <span class="icon-security"></span>
               </span>
               <div class="feature-text">
-                <h3 class="heading">Easy and safe</h3>
-                <p class="text-black-50">
+                <h3 class="heading" style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 600;">Easy and safe</h3>
+                 <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
                   We handle the complexities, protect your interests, and guide you through every stage—so you can relax knowing your purchase is in safe hands.                </p>
               </div>
             </div>
@@ -189,8 +240,8 @@
                 <span class="icon-home2"></span>
               </span>
               <div class="feature-text">
-                <h3 class="heading">Collaborative Approach</h3>
-                <p class="text-black-50">
+                <h3 class="heading" style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 600;">Collaborative Approach</h3>
+                 <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
                    Property buying is a team effort—and we’re on your side from day one. Our experts work hand in hand across research, sourcing, negotiation, and finance to deliver a seamless experience.                </p>
               </div>
             </div>
@@ -200,8 +251,8 @@
                 <span class="icon-person"></span>
               </span>
               <div class="feature-text">
-                <h3 class="heading">Ongoing Partnership</h3>
-                <p class="text-black-50">
+                <h3 class="heading" style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 600;">Ongoing Partnership</h3>
+                 <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
                   Our relationship doesn’t end at settlement. We continue to guide you with strategies to grow your portfolio, helping you make smart, long-term property decisions.
                 </p>
               </div>
@@ -212,8 +263,8 @@
                 <span class="icon-security"></span>
               </span>
               <div class="feature-text">
-                <h3 class="heading">Independent & Unbiased</h3>
-                <p class="text-black-50">
+                <h3 class="heading" style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 600;">Independent & Unbiased</h3>
+                 <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
                   We work solely for you—not developers or sellers. With no hidden agendas, our only focus is finding the property that’s truly right for you.
                 </p>
               </div>
@@ -343,14 +394,8 @@
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              . All Rights Reserved. &mdash; Designed with love by
-              <a href="https://untree.co">Untree.co</a>
-              <!-- License information: https://untree.co/license/ -->
+              . All Rights Reserved. Designed by Untree.co
             </p>
-            <div>
-              Distributed by
-              <a href="https://themewagon.com/" target="_blank">themewagon</a>
-            </div>
           </div>
         </div>
       </div>

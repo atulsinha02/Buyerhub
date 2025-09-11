@@ -43,34 +43,85 @@
       <div class="site-mobile-menu-body"></div>
     </div>
 
-    <nav class="site-nav">
-      <div class="container">
-        <div class="menu-bg-wrap">
-          <div class="site-navigation">
-            <a href="index.html" class="logo m-0 float-start">PropAdvisor</a>
+ <nav class="site-nav">
+  <div class="menu-bg-wrap" style="background-color:#ffffff; border:none; width:100%; position:fixed; top:0; left:0; z-index:9999; padding:20px 0;">
+    <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 40px;">
+      
+      <!-- Logo -->
+      <a href="index.html" class="logo" style="color:#DAA520 !important; text-decoration:none; font-family:'Montserrat', sans-serif; font-weight:700; font-size:28px; letter-spacing:1px; text-shadow:1px 1px 2px rgba(0,0,0,0.3);">
+        PropAdvisor
+      </a>
 
-            <ul
-              class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end"
-            >
-              <li class="active"><a href="contact.html">Contact Us</a></li>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="tel://0468408936"><span class="icon-phone"></span> 0468 408 936</a></li>
-            </ul>
+      <!-- Navigation Menu -->
+      <ul class="js-clone-nav d-none d-lg-flex text-start site-menu" style="list-style:none; margin:0; padding:0; gap:30px; font-size:1.1rem; font-weight:600; letter-spacing:0.5px; font-family:'Montserrat', sans-serif;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li class="active"><a href="contact.html">Contact Us</a></li>
+        <li><a href="tel://0468408936"><span class="icon-phone"></span> 0468 408 936</a></li>
+      </ul>
 
-            <a
-              href="#"
-              class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none"
-              data-toggle="collapse"
-              data-target="#main-navbar"
-            >
-              <span></span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
+      <!-- Mobile Burger Menu -->
+      <a href="#" class="burger light me-auto site-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+        <span></span>
+      </a>
+
+    </div>
+  </div>
+</nav>
+
+<style>
+  /* Navbar container */
+  .menu-bg-wrap {
+    background-color: #ffffff;
+    border: none;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    padding: 20px 0;
+  }
+
+.site-menu a {
+  color: #000000; /* Default text */
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.site-menu a:hover {
+  color: #007bff; /* Royal Blue on hover */
+}
+
+/* Animated underline on hover */
+.site-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+.site-menu a:hover::after {
+  width: 100%;
+}
+
+/* Active/clicked link remains Royal Blue */
+.site-menu .active a {
+  color: #007bff;
+}
+
+.site-menu .active a::after {
+  width: 100%;
+}
+
+</style>
+
 
     <div
       class="hero page-inner overlay"
@@ -113,24 +164,21 @@
            
               <div class="open-hours mt-4">
                 <i class="icon-clock-o"></i>
-                <h4 class="mb-2">Contact Us:</h4>
-                <p>
-                  We're here to help and answer any questions you might have. Reach
-                  out to us and we'll respond as soon as we can.
-                </p>
+                <h4 class="mb-2" style="font-size:clamp(18px,2vw,22px);font-weight:600;">Contact Us:</h4>
+                <p style="font-size:clamp(14px,1.5vw,16px);line-height:1.6;">We're here to help and answer any questions you might have. Reach out to us and we'll respond as soon as we can.</p>
     
               </div>
 
               <div class="email mt-4">
                 <i class="icon-envelope"></i>
-                <h4 class="mb-2">Email:</h4>
-                <p>propadvisor.au@gmail.com</p>
+                <h4 class="mb-2" style="font-size:clamp(18px,2vw,22px);font-weight:600;">Email:</h4>
+                <p style="font-size:clamp(14px,1.5vw,16px);line-height:1.6;">propadvisor.au@gmail.com</p>
               </div>
 
               <div class="phone mt-4">
                 <i class="icon-phone"></i>
-                <h4 class="mb-2">Call:</h4>
-                <p>0468 408 936 (Atul)</p>
+                <h4 class="mb-2" style="font-size:clamp(18px,2vw,22px);font-weight:600;">Call:</h4>
+                <p style="font-size:clamp(14px,1.5vw,16px);line-height:1.6;">0468 408 936 (Atul)</p>
               </div>
             </div>
           </div>
@@ -258,14 +306,8 @@
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              . All Rights Reserved. &mdash; Designed with love by
-              <a href="https://untree.co">Untree.co</a>
-              <!-- License information: https://untree.co/license/ -->
+              . All Rights Reserved. Designed by Untree.co
             </p>
-            <div>
-              Distributed by
-              <a href="https://themewagon.com/" target="_blank">themewagon</a>
-            </div>
           </div>
         </div>
       </div>

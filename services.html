@@ -43,34 +43,85 @@
       <div class="site-mobile-menu-body"></div>
     </div>
 
-    <nav class="site-nav">
-      <div class="container">
-        <div class="menu-bg-wrap">
-          <div class="site-navigation">
-            <a href="index.html" class="logo m-0 float-start">PropAdvisor</a>
+        <nav class="site-nav">
+  <div class="menu-bg-wrap" style="background-color:#ffffff; border:none; width:100%; position:fixed; top:0; left:0; z-index:9999; padding:20px 0;">
+    <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 40px;">
+      
+      <!-- Logo -->
+      <a href="index.html" class="logo" style="color:#DAA520 !important; text-decoration:none; font-family:'Montserrat', sans-serif; font-weight:700; font-size:28px; letter-spacing:1px; text-shadow:1px 1px 2px rgba(0,0,0,0.3);">
+        PropAdvisor
+      </a>
 
-            <ul
-              class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end"
-            >
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li class="active"><a href="services.html">Services</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="tel://0468408936"><span class="icon-phone"></span> 0468 408 936</a></li>
-            </ul>
+      <!-- Navigation Menu -->
+      <ul class="js-clone-nav d-none d-lg-flex text-start site-menu" style="list-style:none; margin:0; padding:0; gap:30px; font-size:1.1rem; font-weight:600; letter-spacing:0.5px; font-family:'Montserrat', sans-serif;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="active"><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="tel://0468408936"><span class="icon-phone"></span> 0468 408 936</a></li>
+      </ul>
 
-            <a
-              href="#"
-              class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none"
-              data-toggle="collapse"
-              data-target="#main-navbar"
-            >
-              <span></span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
+      <!-- Mobile Burger Menu -->
+      <a href="#" class="burger light me-auto site-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+        <span></span>
+      </a>
+
+    </div>
+  </div>
+</nav>
+
+<style>
+  /* Navbar container */
+  .menu-bg-wrap {
+    background-color: #ffffff;
+    border: none;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    padding: 20px 0;
+  }
+
+ .site-menu a {
+  color: #000000; /* Default text */
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.site-menu a:hover {
+  color: #007bff; /* Royal Blue on hover */
+}
+
+/* Animated underline on hover */
+.site-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+.site-menu a:hover::after {
+  width: 100%;
+}
+
+/* Active/clicked link remains Royal Blue */
+.site-menu .active a {
+  color: #007bff;
+}
+
+.site-menu .active a::after {
+  width: 100%;
+}
+
+</style>
+
 
     <div
       class="hero page-inner overlay"
@@ -107,8 +158,8 @@
           <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
             <div class="box-feature mb-4">
               <span class="flaticon-building mb-4 d-block-3"></span>
-              <h3 class="text-black mb-3 font-weight-bold"  style="font-size: 25px;">Getting Started</h3>
-              <p class="text-black-50" style="font-size: 16px;">
+              <h3 class="text-black mb-3 font-weight-bold"  style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 600;">Getting Started</h3>
+              <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
                 We start by discussing your property investment goals. Once you’re confident we’re the right partner for your strategy, you can sign the agreement to begin your journey.
               </p>
             </div>
@@ -116,8 +167,8 @@
           <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
             <div class="box-feature mb-4">
               <span class="flaticon-house mb-4 d-block"></span>
-              <h3 class="text-black mb-3 font-weight-bold" style="font-size: 25px;">Strategy</h3>
-              <p class="text-black-50" style="font-size: 16px;">
+              <h3 class="text-black mb-3 font-weight-bold" style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 600;">Strategy</h3>
+              <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
                 We begin by understanding your goals and then create a personalized acquisition plan designed to turn them into reality.
               </p>
             </div>
@@ -125,8 +176,8 @@
           <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
             <div class="box-feature mb-4">
               <span class="flaticon-house-1 mb-4 d-block-1"></span>
-              <h3 class="text-black mb-3 font-weight-bold" style="font-size: 28px;">Source</h3>
-              <p class="text-black-50" style="font-size: 18px;">
+              <h3 class="text-black mb-3 font-weight-bold" style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 600;">Source</h3>
+              <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
                 If you need assistance with finance, we connect you with our trusted industry partners to get your property investment journey started quickly and smoothly.
               </p>
             </div>
@@ -134,8 +185,8 @@
           <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
             <div class="box-feature mb-4">
               <span class="flaticon-house mb-4 d-block"></span>
-              <h3 class="text-black mb-3 font-weight-bold" style="font-size: 28px;">Smart Property Search</h3>
-              <p class="text-black-50" style="font-size: 18px;">
+              <h3 class="text-black mb-3 font-weight-bold" style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 600;">Smart Property Search</h3>
+              <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
                 Tailored support to help you find and secure the property that perfectly fits your goals.
               </p>
             </div>
@@ -144,8 +195,8 @@
           <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
             <div class="box-feature mb-4">
               <span class="flaticon-house-2 mb-4 d-block-3"></span>
-              <h3 class="text-black mb-3 font-weight-bold" style="font-size: 28px;">Detailed Inspections</h3>
-              <p class="text-black-50" style="font-size: 18px;">
+              <h3 class="text-black mb-3 font-weight-bold" style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 600;">Detailed Inspections</h3>
+              <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
                 Thorough reviews to assess quality, value, and potential before you commit.
               </p>
             </div>
@@ -153,8 +204,8 @@
           <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
             <div class="box-feature mb-4">
               <span class="flaticon-building mb-4 d-block"></span>
-              <h3 class="text-black mb-3 font-weight-bold" style="font-size: 28px;">Insightful Market Analysis</h3>
-              <p class="text-black-50" style="font-size: 18px;">
+              <h3 class="text-black mb-3 font-weight-bold" style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 600;">Insightful Market Analysis</h3>
+              <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
                 Data-driven research to give you clarity, confidence, and a competitive edge.
               </p>
             </div>
@@ -162,8 +213,8 @@
           <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
             <div class="box-feature mb-4">
               <span class="flaticon-house-3 mb-4 d-block-1"></span>
-              <h3 class="text-black mb-3 font-weight-bold" style="font-size: 28px;">Skilled Negotiation</h3>
-              <p class="text-black-50" style="font-size: 18px;">
+              <h3 class="text-black mb-3 font-weight-bold" style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 600;">Skilled Negotiation</h3>
+              <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
                 Experienced negotiators working to achieve the best terms and pricing for you.
               </p>
             </div>
@@ -171,8 +222,8 @@
           <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
             <div class="box-feature mb-4">
               <span class="flaticon-house-4 mb-4 d-block"></span>
-              <h3 class="text-black mb-3 font-weight-bold" style="font-size: 28px;">Seamless Coordination</h3>
-              <p class="text-black-50" style="font-size: 18px;">
+              <h3 class="text-black mb-3 font-weight-bold" style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 600;">Seamless Coordination</h3>
+              <p class="text-black-50" style="font-size: clamp(14px, 1.5vw, 17px);">
                 Complete management of paperwork, processes, and communication for a stress-free purchase.
               </p>
             </div>
@@ -345,14 +396,8 @@
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              . All Rights Reserved. &mdash; Designed with love by
-              <a href="https://untree.co">Untree.co</a>
-              <!-- License information: https://untree.co/license/ -->
+              . All Rights Reserved. Designed by Untree.co
             </p>
-            <div>
-              Distributed by
-              <a href="https://themewagon.com/" target="_blank">themewagon</a>
-            </div>
           </div>
         </div>
       </div>
