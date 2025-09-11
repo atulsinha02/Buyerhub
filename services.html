@@ -52,75 +52,87 @@
         PropAdvisor
       </a>
 
-      <!-- Navigation Menu -->
-      <ul class="js-clone-nav d-none d-lg-flex text-start site-menu" style="list-style:none; margin:0; padding:0; gap:30px; font-size:1.1rem; font-weight:600; letter-spacing:0.5px; font-family:'Montserrat', sans-serif;">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li class="active"><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="tel://0468408936"><span class="icon-phone"></span> 0468 408 936</a></li>
-      </ul>
-
       <!-- Mobile Burger Menu -->
-      <a href="#" class="burger light me-auto site-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+      <a href="#" class="burger light site-menu-toggle d-inline-block d-lg-none" data-bs-toggle="collapse" data-bs-target="#main-navbar">
         <span></span>
       </a>
+
+      <!-- Navigation Menu -->
+      <div class="collapse d-lg-block" id="main-navbar">
+        <ul class="js-clone-nav site-menu" style="list-style:none; margin:0; padding:0; gap:30px; font-size:1.1rem; font-weight:600; letter-spacing:0.5px; font-family:'Montserrat', sans-serif; display:flex; flex-direction:column flex-lg-row;">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li  class="active"><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="tel://0468408936"><span class="icon-phone"></span> 0468 408 936</a></li>
+        </ul>
+      </div>
 
     </div>
   </div>
 </nav>
 
 <style>
-  /* Navbar container */
-  .menu-bg-wrap {
-    background-color: #ffffff;
-    border: none;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    padding: 20px 0;
+  .site-menu a {
+    color: #000000;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
   }
 
- .site-menu a {
-  color: #000000; /* Default text */
-  text-decoration: none;
-  position: relative;
-  transition: color 0.3s ease;
-}
+  /* Hover effect */
+  .site-menu a:hover {
+    color: #007bff;
+  }
 
-/* Hover effect */
-.site-menu a:hover {
-  color: #007bff; /* Royal Blue on hover */
-}
+  /* Animated underline */
+  .site-menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+  }
 
-/* Animated underline on hover */
-.site-menu a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0;
-  height: 2px;
-  background-color: #007bff;
-  transition: width 0.3s ease;
-}
+  .site-menu a:hover::after {
+    width: 100%;
+  }
 
-.site-menu a:hover::after {
-  width: 100%;
-}
+  /* Active/clicked link remains Royal Blue */
+  .site-menu .active a {
+    color: #007bff;
+  }
 
-/* Active/clicked link remains Royal Blue */
-.site-menu .active a {
-  color: #007bff;
-}
+  .site-menu .active a::after {
+    width: 100%;
+  }
 
-.site-menu .active a::after {
-  width: 100%;
-}
-
+  /* Mobile Menu Styling */
+  @media (max-width: 991px) {
+    .site-menu {
+      flex-direction: column;
+      gap: 15px;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+    }
+  }
 </style>
+
+<script>
+  // JS to make clicked link active dynamically
+  const menuLinks = document.querySelectorAll('.site-menu a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      menuLinks.forEach(l => l.parentElement.classList.remove('active'));
+      this.parentElement.classList.add('active');
+    });
+  });
+</script>
+
 
 
     <div
