@@ -52,22 +52,24 @@
         PropAdvisor
       </a>
 
-      <!-- Mobile Burger Menu -->
-      <a href="#" class="burger light site-menu-toggle d-inline-block d-lg-none" data-bs-toggle="collapse" data-bs-target="#main-navbar">
-        <span></span>
-      </a>
+      <!-- Mobile Burger Icon -->
+      <div class="menu-toggle d-lg-none" onclick="toggleMenu()">
+        ☰
+      </div>
 
       <!-- Navigation Menu -->
-      <div class="collapse d-lg-block" id="main-navbar">
-        <ul class="js-clone-nav site-menu" style="list-style:none; margin:0; padding:0; gap:30px; font-size:1.1rem; font-weight:600; letter-spacing:0.5px; font-family:'Montserrat', sans-serif; display:flex; flex-direction:column flex-lg-row;">
+      <div class="menu-collapse" id="main-navbar">
+        <!-- Close Button (Mobile only) -->
+        <div class="menu-close d-lg-none" onclick="toggleMenu()">✕</div>
+
+        <ul class="js-clone-nav site-menu" style="list-style:none; margin:0; padding:0; gap:30px; font-size:1.1rem; font-weight:600; letter-spacing:0.5px; font-family:'Montserrat', sans-serif; display:flex;">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
-          <li  class="active"><a href="contact.html">Contact Us</a></li>
+          <li class="active"><a href="contact.html">Contact Us</a></li>
           <li><a href="tel://0468408936"><span class="icon-phone"></span> 0468 408 936</a></li>
         </ul>
       </div>
-
     </div>
   </div>
 </nav>
@@ -112,26 +114,63 @@
 
   /* Mobile Menu Styling */
   @media (max-width: 991px) {
+    .menu-toggle {
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .menu-collapse {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 80%;
+      height: 100vh;
+      background-color: #ffffff;
+      padding: 40px 20px;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+      flex-direction: column;
+      gap: 20px;
+      z-index: 10000;
+    }
+
+    .menu-collapse.active {
+      display: flex;
+    }
+
+    .menu-close {
+      align-self: flex-end;
+      font-size: 28px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
     .site-menu {
       flex-direction: column;
-      gap: 15px;
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 5px;
+      gap: 20px;
     }
   }
 </style>
 
 <script>
+  // Toggle mobile menu
+  function toggleMenu() {
+    document.getElementById("main-navbar").classList.toggle("active");
+  }
+
   // JS to make clicked link active dynamically
   const menuLinks = document.querySelectorAll('.site-menu a');
   menuLinks.forEach(link => {
     link.addEventListener('click', function() {
       menuLinks.forEach(l => l.parentElement.classList.remove('active'));
       this.parentElement.classList.add('active');
+
+      // Close menu after clicking on mobile
+      document.getElementById("main-navbar").classList.remove("active");
     });
   });
 </script>
+
 
     <div
       class="hero page-inner overlay"
